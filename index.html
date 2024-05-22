@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flair</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <header>
+                <div class="logo">
+                    <h2>FLAIR</h2>
+                </div>
+                <nav class="menu">
+                    <div class="desktop-menu">
+                        <ul>
+                            <div class="dropdown dropdown-hover">
+                                <li><a href="#">Home</a></li>
+                                <ul class="dropdown-content">
+                                    <li><a href="#">About us</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown dropdown-hover">
+                                <li><a href="#">Men</a></li>
+                                <ul class="dropdown-content">
+                                    <li><a href="#">About us</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown dropdown-hover">
+                                <li><a href="#">Women</a></li>
+                                <ul class="dropdown-content">
+                                    <li><a href="#">About us</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown dropdown-hover">
+                                <li><a href="#">Beauty</a></li>
+                                <ul class="dropdown-content">
+                                    <li><a href="#">About us</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown dropdown-hover">
+                                <li><a href="#">Swim</a></li>
+                                <ul class="dropdown-content">
+                                    <li><a href="#">About us</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                        </ul>
+                        <div class="search-dropdown">
+                            <li><button id="search-button"><img class="search"
+                                        src="./assets/images/search.svg" alt="search icon" /></button></li>
+                            <div id="search-input" class="search-dropdown-content">
+                                <label for="search">Search our site</label>
+                                <input type="text" id="search" name="search" />
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <a href="./basket.html"><button class="basket-button"><img class="basket-img"
+                            src="./assets/images/basket.svg" alt="basket icon"/></button></a>
+            </header>
+            <div class="main-content">
+                <section class="text">
+                    <h1>Spring fashion trends</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore
+                        et dolore
+                        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                        ex
+                        ea
+                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                        eu
+                        fugiat
+                        nulla pariatur.</p>
+                    <button>Discover</button>
+                </section>
+                <div id="images">
+                    <img class="content-img male-model"
+                        src="./assets/images/male-model.jpeg" alt="image of male model" />
+                    <img class="content-img female-model"
+                        src="./assets/images/female-model.jpeg" alt="image of female model"/>
+                    <img class="content-img female-model-2"
+                        src="./assets/images/female-model-2.webp" alt="image of another female model"/>
+                </div>
+            </div>
+            <footer>
+                <div class="footer-content">
+                    <ul class="socials">
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                    <div id="buttons" class="prev-next">
+                        <button id="prev-btn" data-direction="-1">PREV</button>
+                        <button id="next-btn" data-direction="1">NEXT</button>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="./index.js" defer></script>
+</body>
