@@ -165,6 +165,17 @@ if (basketContent) {
     numberDiv.appendChild(number);
     basketButton.appendChild(numberDiv);
 
+    const basketInnerContent = document.getElementById("basket-inner-content");
+   
+    const noItemsMessageContainer = document.createElement("div");
+    noItemsMessageContainer.classList.add("no-items-message");
+    // console.log(noItemsMessageContainer);
+    const noItemsMessage = document.createElement("p");
+    noItemsMessage.innerHTML =
+        "There are no items in your basket. Click <a href='./index.html'>here</a> to continue shopping.";
+    noItemsMessageContainer.appendChild(noItemsMessage);
+
+
     // accessing text box buttons
     removeButtons.forEach((removeButton) =>
         buttonsDiv.addEventListener("click", function (e) {
@@ -174,6 +185,10 @@ if (basketContent) {
                     //updating basket item number
                     const itemsUpdate = document.querySelectorAll(".item-container");
                     number.innerHTML = itemsUpdate.length;
+                    if (itemsUpdate.length <= 0) {
+                        number.parentElement.remove();
+                        basketInnerContent.appendChild(noItemsMessageContainer);
+                    }
                 }
                 textBox.remove();
                 greyScreen.remove();
@@ -187,15 +202,15 @@ if (basketContent) {
     );
 
     // if there are no items in basket, print no items message
-    const basketInnerContent = document.getElementById("basket-inner-content");
+    // const basketInnerContent = document.getElementById("basket-inner-content");
    
-    const noItemsMessageContainer = document.createElement("div");
-    noItemsMessageContainer.classList.add("no-items-message");
-    // console.log(noItemsMessageContainer);
-    const noItemsMessage = document.createElement("p");
-    noItemsMessage.innerHTML =
-        "There are no items in your basket. Click <a href='./index.html'>here</a> to continue shopping.";
-    noItemsMessageContainer.appendChild(noItemsMessage);
+    // const noItemsMessageContainer = document.createElement("div");
+    // noItemsMessageContainer.classList.add("no-items-message");
+    // // console.log(noItemsMessageContainer);
+    // const noItemsMessage = document.createElement("p");
+    // noItemsMessage.innerHTML =
+    //     "There are no items in your basket. Click <a href='./index.html'>here</a> to continue shopping.";
+    // noItemsMessageContainer.appendChild(noItemsMessage);
 
     if (basketItems.length <= 0) {
         basketInnerContent.appendChild(noItemsMessageContainer);
