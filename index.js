@@ -153,14 +153,27 @@ if (basketContent) {
         })
     );
 
+    //creating number of items in basket button
+    const basketButton = document.querySelector(".basket-button");
+    let basketItems = document.querySelectorAll(".item-container");
+    console.log(basketItems);
+    const numberDiv = document.createElement("div");
+    numberDiv.classList.add("numberDiv");
+    let number = document.createElement("p");
+    number.innerHTML = basketItems.length;
+
+    numberDiv.appendChild(number);
+    basketButton.appendChild(numberDiv);
+
     // accessing text box buttons
     removeButtons.forEach((removeButton) =>
         buttonsDiv.addEventListener("click", function (e) {
             if (e.target.classList.contains("yes-delete")) {
                 if (removeButton.classList.contains("remove-clicked")) {
-                    removeButton.parentElement.parentElement.parentElement.classList.add(
-                        "item-for-removal"
-                    );
+                    removeButton.parentElement.remove();
+                    //updating basket item number
+                    const itemsUpdate = document.querySelectorAll(".item-container");
+                    number.innerHTML = itemsUpdate.length;
                 }
                 textBox.remove();
                 greyScreen.remove();
@@ -169,19 +182,19 @@ if (basketContent) {
                 textBox.remove();
                 greyScreen.remove();
             }
+            
         })
     );
 
     // if there are no items in basket, print no items message
-
     const basketInnerContent = document.getElementById("basket-inner-content");
-    const basketItems = document.querySelectorAll(".item");
+   
     const noItemsMessageContainer = document.createElement("div");
     noItemsMessageContainer.classList.add("no-items-message");
-    console.log(noItemsMessageContainer);
+    // console.log(noItemsMessageContainer);
     const noItemsMessage = document.createElement("p");
     noItemsMessage.innerHTML =
-        "There are no items in your basket. Click <a href='#'>here</a> to continue shopping.";
+        "There are no items in your basket. Click <a href='./index.html'>here</a> to continue shopping.";
     noItemsMessageContainer.appendChild(noItemsMessage);
 
     if (basketItems.length <= 0) {
@@ -189,12 +202,5 @@ if (basketContent) {
     }
 
     // add number of basket items to basket button
-    const basketButton = document.querySelector(".basket-button");
-    const numberDiv = document.createElement("div");
-    numberDiv.classList.add("numberDiv");
-    let number = document.createElement("p");
-    number.innerHTML = basketItems.length;
-
-    numberDiv.appendChild(number);
-    basketButton.appendChild(numberDiv);
+    
 }
