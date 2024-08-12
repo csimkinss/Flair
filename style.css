@@ -22,9 +22,11 @@ body {
   grid-template-rows: min-content 1fr;
 }
 
-.content {
+.homepage-content {
   height: 100vh;
   height: 100dvh;
+}
+.content {
   background-color: white;
   display: grid;
   grid-template-columns: min-content 1fr min-contemt;
@@ -351,7 +353,7 @@ body {
 
 /* basket page styling */
 .basket-content {
-  position: relative;
+  /* position: relative; */
   height: 100%;
 
   header {

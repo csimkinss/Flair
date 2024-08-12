@@ -148,6 +148,9 @@ if (basketContent) {
     removeButtons.forEach((removeButton) =>
         removeButton.addEventListener("click", function (e) {
             e.target.classList.add("remove-clicked");
+            //disable scrolling when overlay and box appear
+            document.body.style.height = "100vh";
+            document.body.style.overflow = "hidden";
             basketContent.appendChild(greyScreen);
             basketContent.appendChild(textBox);
         })
@@ -182,6 +185,9 @@ if (basketContent) {
             if (e.target.classList.contains("yes-delete")) {
                 if (removeButton.classList.contains("remove-clicked")) {
                     removeButton.parentElement.remove();
+                    //remove scroll settings when box and overlay disappear
+                    document.body.style.height = "auto";
+                    document.body.style.overflow = "auto";
                     //updating basket item number
                     const itemsUpdate = document.querySelectorAll(".item-container");
                     number.innerHTML = itemsUpdate.length;
@@ -196,6 +202,9 @@ if (basketContent) {
                 removeButton.classList.remove("remove-clicked");
                 textBox.remove();
                 greyScreen.remove();
+                //remove scroll settings when box and overlay disappear
+                document.body.style.height = "auto";
+                document.body.style.overflow = "auto";
             }
             
         })
