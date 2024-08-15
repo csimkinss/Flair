@@ -356,7 +356,7 @@ body {
 
 /* basket page styling */
 .basket-content {
-  height: 100%;
+  min-height: 100vh;
 
   header {
     .logo {
