@@ -114,7 +114,6 @@ if (imgContainer) {
 // basket page item removal
 
 // creating text box and grey overlay div
-
 const basketContent = document.getElementById("basket-content");
 
 if (basketContent) {
@@ -148,11 +147,10 @@ if (basketContent) {
     removeButtons.forEach((removeButton) =>
         removeButton.addEventListener("click", function (e) {
             e.target.classList.add("remove-clicked");
-            //disable scrolling when overlay and box appear
-            document.body.style.height = "100vh";
-            document.body.style.overflow = "hidden";
-            basketContent.appendChild(greyScreen);
-            basketContent.appendChild(textBox);
+            //setting body to 100vh for grey overlay
+            document.body.style.minHeight = "100vh";
+            document.body.appendChild(greyScreen);
+            document.body.appendChild(textBox);
         })
     );
 
@@ -170,9 +168,9 @@ if (basketContent) {
 
     const basketInnerContent = document.getElementById("basket-inner-content");
    
+    //creating no items message
     const noItemsMessageContainer = document.createElement("div");
     noItemsMessageContainer.classList.add("no-items-message");
-    // console.log(noItemsMessageContainer);
     const noItemsMessage = document.createElement("p");
     noItemsMessage.innerHTML =
         "There are no items in your basket. Click <a href='./index.html'>here</a> to continue shopping.";
@@ -185,9 +183,6 @@ if (basketContent) {
             if (e.target.classList.contains("yes-delete")) {
                 if (removeButton.classList.contains("remove-clicked")) {
                     removeButton.parentElement.remove();
-                    //remove scroll settings when box and overlay disappear
-                    document.body.style.height = "auto";
-                    document.body.style.overflow = "auto";
                     //updating basket item number
                     const itemsUpdate = document.querySelectorAll(".item-container");
                     number.innerHTML = itemsUpdate.length;
@@ -202,29 +197,14 @@ if (basketContent) {
                 removeButton.classList.remove("remove-clicked");
                 textBox.remove();
                 greyScreen.remove();
-                //remove scroll settings when box and overlay disappear
-                document.body.style.height = "auto";
-                document.body.style.overflow = "auto";
             }
             
         })
     );
 
     // if there are no items in basket, print no items message
-    // const basketInnerContent = document.getElementById("basket-inner-content");
-   
-    // const noItemsMessageContainer = document.createElement("div");
-    // noItemsMessageContainer.classList.add("no-items-message");
-    // // console.log(noItemsMessageContainer);
-    // const noItemsMessage = document.createElement("p");
-    // noItemsMessage.innerHTML =
-    //     "There are no items in your basket. Click <a href='./index.html'>here</a> to continue shopping.";
-    // noItemsMessageContainer.appendChild(noItemsMessage);
-
     if (basketItems.length <= 0) {
         basketInnerContent.appendChild(noItemsMessageContainer);
     }
-
-    // add number of basket items to basket button
     
 }

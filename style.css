@@ -350,6 +350,53 @@ body {
     }
   }
 }
+.grey-screen {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: darkgray;
+  opacity: 35%;
+}
+.confirm-item-delete {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  opacity: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-height: 8rem;
+  padding: 2rem;
+  max-width: 20rem;
+  z-index: 99;
+  box-shadow: 0 0 15px 10px rgb(0, 0, 0, 10%);
+
+  p {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .final-option-buttons {
+    display: flex;
+    gap: 1rem;
+    margin: 0 auto;
+
+    button {
+      background-color: #012a4a;
+      color: white;
+      border: none;
+      transition: background-color 0.24s ease-in-out;
+
+      &:hover {
+        background-color: #ee6c4d;
+      }
+    }
+  }
+}
 
 /* basket page styling */
 .basket-content {
@@ -365,6 +412,7 @@ body {
       }
     }
     .basket-button {
+      position: relative;
       .numberDiv {
         position: absolute;
         top: 3px;
@@ -375,55 +423,6 @@ body {
 
         p {
           margin: 0;
-        }
-      }
-    }
-  }
-
-  .grey-screen {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: darkgray;
-    opacity: 35%;
-  }
-
-  .confirm-item-delete {
-    display: flex;
-    position: absolute;
-    flex-direction: column;
-    justify-content: center;
-    background-color: white;
-    opacity: 100%;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    max-height: 8rem;
-    padding: 2rem;
-    max-width: 20rem;
-    z-index: 99;
-    box-shadow: 0 0 15px 10px rgb(0, 0, 0, 10%);
-
-    p {
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    .final-option-buttons {
-      display: flex;
-      gap: 1rem;
-      margin: 0 auto;
-
-      button {
-        background-color: #012a4a;
-        color: white;
-        border: none;
-        transition: background-color 0.24s ease-in-out;
-
-        &:hover {
-          background-color: #ee6c4d;
         }
       }
     }
