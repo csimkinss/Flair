@@ -148,7 +148,7 @@ if (basketContent) {
         removeButton.addEventListener("click", function (e) {
             e.target.classList.add("remove-clicked");
             //setting body to 100vh for grey overlay
-            document.body.style.minHeight = "100vh";
+            // document.body.style.minHeight = "100vh";
             document.body.appendChild(greyScreen);
             document.body.appendChild(textBox);
         })
@@ -157,7 +157,6 @@ if (basketContent) {
     //creating number of items in basket button
     const basketButton = document.querySelector(".basket-button");
     let basketItems = document.querySelectorAll(".item-container");
-    console.log(basketItems);
     const numberDiv = document.createElement("div");
     numberDiv.classList.add("numberDiv");
     let number = document.createElement("p");

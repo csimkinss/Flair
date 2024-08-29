@@ -15,6 +15,8 @@
 }
 
 body {
+  min-height: 100vh;
+  min-height: 100dvh;
   font-family: "Afacad";
   margin: 0;
   position: relative;
@@ -29,7 +31,6 @@ body {
 .content {
   background-color: white;
   display: grid;
-  grid-template-columns: min-content 1fr min-contemt;
   grid-template-rows: min-content 1fr min-content;
 
   button {
@@ -311,7 +312,7 @@ body {
 @media (max-width: 1025px) {
   .content {
     .main-content {
-      grid-template-rows: 1fr 1fr 1fr;
+      /* grid-template-rows: 1fr 1fr 1fr; */
       .text {
         grid-row-start: 3;
         grid-column: span 4;
@@ -338,6 +339,9 @@ body {
 }
 
 @media (max-width: 650px) {
+  .homepage-content {
+    height: auto;
+  }
   .content {
     .main-content {
       .text {
@@ -368,6 +372,7 @@ body {
     }
     .basket-button {
       position: relative;
+
       .numberDiv {
         position: absolute;
         top: 3px;
@@ -441,6 +446,10 @@ body {
   justify-content: space-between;
   margin-bottom: 1.5rem;
 
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
   .item-inner-container {
     display: flex;
   }
@@ -471,6 +480,10 @@ body {
     &:hover {
       background-color: #ee6c4d;
     }
+
+    &.mobile {
+      display: none;
+    }
   }
 
   &.item-for-removal {
@@ -493,4 +506,32 @@ body {
 
 .basket-footer-content {
   padding-bottom: 0.55rem;
+}
+
+/* basket page mobile styling */
+@media (max-width: 550px) {
+  .basket-inner-content {
+    padding: 2rem;
+  }
+  .item-container {
+    .item-remove {
+      &.mobile {
+        display: block;
+      }
+      &.desktop {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 475px) {
+  .confirm-item-delete {
+    max-width: 15rem;
+  }
+  .item-container {
+    .item-remove {
+      margin-left: 2rem;
+    }
+  }
 }
